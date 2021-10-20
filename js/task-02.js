@@ -7,14 +7,10 @@ const ingredients = [
   'Condiments',
 ];
 
-const arrayTag = [];
-
-ingredients.forEach(elem => {
-  const temp = document.createElement("li");
-  temp.textContent = elem;
-  temp.className = "item";
-  arrayTag.push(temp);
-});
+const arrayTag = ingredients.map(element => {const temp = document.createElement("li");
+   temp.textContent = element;
+   temp.className = "item";
+   return temp});
 
 document.querySelector("#ingredients").append(...arrayTag);
 
