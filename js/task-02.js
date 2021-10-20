@@ -10,7 +10,7 @@ const ingredients = [
 const arrayTag = [];
 
 ingredients.forEach(elem => {
-  const temp = (document.createElement("li"));
+  const temp = document.createElement("li");
   temp.textContent = elem;
   temp.className = "item";
   arrayTag.push(temp);
