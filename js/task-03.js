@@ -13,6 +13,8 @@ const images = [
   },
 ];
 
-const arrayTag = images.map(elem => `<li class="item"><img src="${elem.url}" alt${elem.alt}</li>`);
+const arrayTag = (images.map(
+  elem => `<li class="item"><img class="item__img" src="${elem.url}" alt="${elem.alt}"></li>`
+  )).join("");
 
 document.querySelector(".gallery").insertAdjacentHTML("beforeend", arrayTag);

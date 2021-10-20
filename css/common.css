@@ -22,3 +22,15 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+.item {
+display: flex;
+justify-content: left;
+align-items: left;
+}
+
+.item__img {
+  display: block;
+  max-width: 400px;
+  padding: 15px;
+}
