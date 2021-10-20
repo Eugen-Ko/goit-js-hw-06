@@ -20,7 +20,7 @@ console.log("Код первого варианта решения");
 console.log("2) Колличество элементов в категориях : ");
 [...child].forEach((element, counter) => {
   console.log(
-    `2.${counter + 1}) В категории ${element.children[0].innerHTML} ${
+    `2.${counter + 1}. В категории ${element.children[0].innerHTML} ${
       element.children[1].children.length
     } элементов.`
   );
@@ -35,7 +35,7 @@ console.log("Код второго варианта решения");
 console.log("2) Колличество элементов в категориях : ");
 [...child].forEach((element, counter) => {
   console.log(
-    `2.${counter + 1}) В категории ${element.querySelector("h2").innerHTML} ${
+    `2.${counter + 1}. В категории ${element.querySelector("h2").innerHTML} ${
       element.querySelectorAll("li").length
     } элементов.`
   );
@@ -64,3 +64,5 @@ document.querySelector("#categories").before(document.createElement("p"));
     );
   document.querySelector("#categories").before(document.createElement("br"));
 });
+
+
