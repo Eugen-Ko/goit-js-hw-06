@@ -9,13 +9,13 @@ const ingredients = [
 
 const arrayTag = [];
 
-
-ingredients.forEach((elem, index) => {
+ingredients.forEach(elem => {
   const temp = (document.createElement("li"));
-  temp.textContent = ingredients[index];
+  temp.textContent = elem;
   temp.className = "item";
   arrayTag.push(temp);
 });
 
 document.querySelector("#ingredients").append(...arrayTag);
+
 console.log(...arrayTag);
