@@ -5,11 +5,6 @@ const value = document.querySelector("#value");
 
 let counterValue = Number(value.textContent);
 
-// btnDecrement.addEventListener("click", () => {
-//   counterValue -= 1;
-//   value.textContent = counterValue;
-// });
-
 btnDecrement.addEventListener("click", () => {
   counterValue -= 1;
   value.textContent = counterValue;
