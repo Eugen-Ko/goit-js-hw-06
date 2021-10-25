@@ -16,6 +16,3 @@ btnIncrement.addEventListener("click", () => {
 });
 
 // Нужно доработать - не красиво.
-
-
-

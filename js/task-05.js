@@ -5,17 +5,26 @@ const nameOutput = document.querySelector("#name-output");
 // При загрузке сразу фокусируем на поле ввода.
 nameInput.focus();
 
-// Изменение Имени по нажатию на "ENTER"
-const changeNameByEnter = ({key}) => {
-  key === "Enter" ? nameOutput.textContent = nameInput.value : nameOutput.textContent;
-  nameInput.value === "" ? nameOutput.textContent = "Anonymous" : nameOutput.textContent;
-}
+// Изменение Имени при нажатиии "Enter".
+// nameInput.addEventListener("keydown", ({ key }) => {
+//   key === "Enter"
+//     ? (nameOutput.textContent = nameInput.value)
+//     : nameOutput.textContent;
+//   nameInput.value === ""
+//     ? (nameOutput.textContent = "Anonymous")
+//     : nameOutput.textContent;
+// });
 
 // Изменение Имени при потере фокуса.
-const changeNameByBlur = () => {
-  nameInput.value === "" ? nameOutput.textContent = "Anonymous" : nameOutput.textContent = nameInput.value;
-}
+// nameInput.addEventListener("blur", () => {
+//   nameInput.value === ""
+//     ? (nameOutput.textContent = "Anonymous")
+//     : (nameOutput.textContent = nameInput.value);
+// });
 
-// слушатели 
-nameInput.addEventListener("keydown", changeNameByEnter);
-nameInput.addEventListener("blur", changeNameByBlur);
+// Изменение имени "онлайн".
+nameInput.addEventListener("input", (event) => {
+  event.currentTarget.value !== ""
+    ? (nameOutput.textContent = event.currentTarget.value)
+    : (nameOutput.textContent = "Anonymous");
+});

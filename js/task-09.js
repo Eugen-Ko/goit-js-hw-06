@@ -13,8 +13,7 @@ const changeBgColor = () => {
   const colorTemp = getRandomHexColor();
   changeBodyColor.style.backgroundColor = colorTemp;
   outputColor.textContent = colorTemp;
-}
+};
 
 // Слушатель
-btnChange.addEventListener("click", changeBgColor); 
-
+btnChange.addEventListener("click", changeBgColor);
