@@ -15,4 +15,4 @@ btnIncrement.addEventListener("click", () => {
   value.textContent = counterValue;
 });
 
-// Нужно доработать - не красиво.
+// Нужно доработать - что-то не нравится, но не понимаю - что.
