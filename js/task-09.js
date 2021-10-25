@@ -10,8 +10,9 @@ const outputColor = document.querySelector(".color");
 
 // Изменение цвета фона и вывод номера цвета в спан.
 const changeBgColor = () => {
-  changeBodyColor.style.backgroundColor = getRandomHexColor()
-  outputColor.textContent = changeBodyColor.style.backgroundColor;
+  const colorTemp = getRandomHexColor();
+  changeBodyColor.style.backgroundColor = colorTemp;
+  outputColor.textContent = colorTemp;
 }
 
 // Слушатель
