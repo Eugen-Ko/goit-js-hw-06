@@ -1,10 +1,9 @@
 const inputField = document.querySelector("#validation-input");
 
-const checkLength = () =>
+inputField.addEventListener("blur", () =>
   inputField.value.length === Number(inputField.getAttribute("data-length"))
     ? (inputField.className = "valid")
-    : (inputField.className = "invalid");
+    : (inputField.className = "invalid")
+);
 
-inputField.addEventListener("blur", checkLength);
-
-// Не понял как по простому достучаться до "data-length".
+// Не понял как напрямую без getAtribute достучаться до "data-length".
