@@ -1,6 +1,7 @@
 const inputField = document.querySelector("#validation-input");
 
 // Изменение цвета рамки после потери фокуса
+// При нажатии на "Enter" то же самое, только другое событие + проверка
 // ------------------------------------------
 // inputField.addEventListener("blur", () =>
 //   inputField.value.length === Number(inputField.getAttribute("data-length"))

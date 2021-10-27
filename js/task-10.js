@@ -3,31 +3,58 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-//
+// инициализация узлов
 const amountField = document.querySelector("#controls input");
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
 const boxesPlace = document.querySelector("#boxes");
 
-createBtn.addEventListener("click", createBoxes(amountField.value));
+// Функция вызывает функцию очистки всех ранее созданных элементов
+//  и функцию проверки корректного ввода числа
+const createElements = (amount) => {
+  destroyElements();
+  checkedNumber(amount);
+};
 
-function createBoxes(amount) {
-  console.log(amount);
+// Функция удаляет все ранее созданные элементы,
+// как квадратики так и сообщение об ошибке ввода.
+const destroyElements = () => {
+  const numberOfElements = boxesPlace.children.length;
+  for (let i = 0; i < numberOfElements; i += 1) {
+    boxesPlace.querySelector(".insertedElement").remove();
+  }
+};
 
-  console.log("ggggggggggggggggg");
-  return;
-}
+// Функция проверяет корректность ввода числа
+const checkedNumber = (amount) =>
+  amount > 100 || amount < 1 ? insertError() : createBoxes(amount);
 
-// let counter = 0;
+// Функция выводит сообщение о некоректном вводе числа
+// И очищает значение в поле ввода.
+const insertError = () => {
+  boxesPlace.insertAdjacentHTML(
+    "beforeend",
+    '<p class="insertedElement">Не допустимое значение!!! Введите число от "1" до "100".</p>'
+  );
+  amountField.value = "";
+};
 
-// const createBoxes = (amount) => {
-//   console.log(amount);
-//   //   for (let i = 0; i <= amount; i += 1) {
-//   //     boxesPlace.insertAdjacentHTML("beforeend",`<div  style="width : 30px; height : 30px; background-color: ${getRandomHexColor()}"></div>`)
-//   //   }
-// };
+// Функция создает цветные квадратики
+const createBoxes = (amount) => {
+  for (let i = 0; i <= amount - 1; i += 1) {
+    boxesPlace.insertAdjacentHTML(
+      "beforeend",
+      `<div class="insertedElement" style="width : ${i * 10 + 30}px; 
+      height : ${i * 10 + 30}px; 
+      background-color: ${getRandomHexColor()}"></div>`
+    );
+  }
+};
 
-// createBtn.addEventListener("click", console.log(amountField.valueAsNumber));
-// createBtn.addEventListener("click", destroyBox());
-
-// incorrect value. Values ​​range from 1 to 100
+// слушатели --------------
+// слушатель на "Сreate".
+createBtn.addEventListener("click", () => {
+  createElements(amountField.value);
+});
+// слушатель на "Destroy"
+destroyBtn.addEventListener("click", destroyElements);

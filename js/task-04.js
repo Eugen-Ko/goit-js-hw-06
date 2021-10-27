@@ -1,18 +1,12 @@
+// Инициализация узлов
 const btnDecrement = document.querySelector("[data-action='decrement']");
 const btnIncrement = document.querySelector("[data-action='increment']");
-
 const value = document.querySelector("#value");
 
-let counterValue = Number(value.textContent);
-
+// Слушатели
 btnDecrement.addEventListener("click", () => {
-  counterValue -= 1;
-  value.textContent = counterValue;
+  value.textContent = Number(value.textContent) - 1;
 });
-
 btnIncrement.addEventListener("click", () => {
-  counterValue += 1;
-  value.textContent = counterValue;
+  value.textContent = Number(value.textContent) + 1;
 });
-
-// Нужно доработать - что-то не нравится, но не понимаю - что.
