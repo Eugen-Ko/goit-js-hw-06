@@ -11,9 +11,9 @@ const ingredients = [
 const ingridients = document.querySelector("#ingredients");
 
 const makeArrayTag = ingredientsList => {
-  return ingredientsList.map(ingredient => {
+  return ingredientsList.map(ingredientEl => {
     const ingredientLi = document.createElement("li");
-    ingredientLi.textContent = ingredient;
+    ingredientLi.textContent = ingredientEl;
     ingredientLi.className = "item";
     return ingredientLi});
 }
