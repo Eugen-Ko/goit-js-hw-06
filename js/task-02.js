@@ -7,11 +7,19 @@ const ingredients = [
   'Condiments',
 ];
 
-const arrayTag = ingredients.map(element => {const temp = document.createElement("li");
-   temp.textContent = element;
-   temp.className = "item";
-   return temp});
+// Инициализация узла
+const ingridients = document.querySelector("#ingredients");
 
-document.querySelector("#ingredients").append(...arrayTag);
+const makeArrayTag = ingredientsList => {
+  return ingredientsList.map(ingredient => {
+    const ingredientLi = document.createElement("li");
+    ingredientLi.textContent = ingredient;
+    ingredientLi.className = "item";
+    return ingredientLi});
+}
+
+const arrayTag = makeArrayTag(ingredients);
+
+ingridients.append(...arrayTag);
 
 console.log(...arrayTag);
