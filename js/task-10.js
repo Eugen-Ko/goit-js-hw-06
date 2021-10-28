@@ -19,10 +19,16 @@ const createElements = (amount) => {
 // Функция удаляет все ранее созданные элементы,
 // как квадратики так и сообщение об ошибке ввода.
 const destroyElements = () => {
-  const numberOfElements = boxesPlace.children.length;
-  for (let i = 0; i < numberOfElements; i += 1) {
-    boxesPlace.querySelector(".insertedElement").remove();
-  }
+
+  // Удаление через childrend + remove
+  // ---------------------------------
+  // const numberOfElements = boxesPlace.children.length;
+  // for (let i = 0; i < numberOfElements; i += 1) {
+  //   boxesPlace.querySelector(".insertedElement").remove();
+  // }
+  // ---------------------------------
+  boxesPlace.innerHTML = "";
+
 };
 
 // Функция проверяет корректность ввода числа
