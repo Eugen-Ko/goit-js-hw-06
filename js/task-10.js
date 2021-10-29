@@ -37,14 +37,16 @@ const checkedNumber = (amount) =>
 
 // Функция выводит сообщение о некоректном вводе числа
 // И очищает значение в поле ввода.
+
 const insertError = () => {
-  
   
   boxesPlace.insertAdjacentHTML(
     "beforeend",
     '<p class="insertedElement">Не допустимое значение!!! Введите число от "1" до "100".</p>'
   );
+  
   amountField.value = "";
+
 };
 
 // Функция создает цветные квадратики

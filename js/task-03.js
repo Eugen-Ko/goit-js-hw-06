@@ -13,11 +13,31 @@ const images = [
   },
 ];
 
-const arrayTag = images
-  .map(
-    (elem) =>
-      `<li class="item_03"><img class="item__img" src="${elem.url}" alt="${elem.alt}"></li>`
-  )
-  .join("");
+// --------------------------------------------------------------------
+// старый вариант
+// 
+// const arrayTag = images
+//   .map(
+//     (elem) =>
+//       `<li class="item_03"><img class="item__img" src="${elem.url}" alt="${elem.alt}"></li>`
+//   )
+//   .join("");
+// console.log(arrayTag);
 
-document.querySelector(".gallery").insertAdjacentHTML("beforeend", arrayTag);
+// document.querySelector(".gallery").insertAdjacentHTML("beforeend", arrayTag);
+
+// ---------------------------------------------------------------------
+// Инициализация узла
+const gallary = document.querySelector(".gallery");
+
+// функция создает строку <li>
+const createElement = ({url, alt}) => `<li class="item_03"><img class="item__img" src="${url}" alt="${alt}"></li>`;
+// функция перебирает массив объектов images
+const makeGallary = (imageList) => imageList.map(imageEl => createElement(imageEl)).join("");
+// вызываем
+const arrayTag = makeGallary(images);
+
+gallary.insertAdjacentHTML("beforeend", arrayTag);
+
+
+

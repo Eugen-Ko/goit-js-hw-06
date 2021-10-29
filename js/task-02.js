@@ -14,7 +14,7 @@ const makeArrayTag = ingredientsList => {
   return ingredientsList.map(ingredientEl => {
     const ingredientLi = document.createElement("li");
     ingredientLi.textContent = ingredientEl;
-    ingredientLi.className = "item";
+    ingredientLi.classList.add("item");
     return ingredientLi});
 }
 
