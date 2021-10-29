@@ -13,9 +13,9 @@ const inputField = document.querySelector("#validation-input");
 // Изменение цвета рамки "онлайн"
 // ------------------------------------------
 inputField.style.outline = "none";
-inputField.addEventListener("input", (event) => {
-  switch (event.currentTarget.value.length) {
-    case Number(inputField.getAttribute("data-length")):
+inputField.addEventListener("input", (even) => {
+  switch (even.currentTarget.value.length) {
+    case Number(inputField.attributes[2].textContent):
       inputField.className = "valid";
       break;
     case 0:
@@ -27,4 +27,4 @@ inputField.addEventListener("input", (event) => {
 });
 // ------------------------------------------
 
-// Не понял как напрямую без getAtribute достучаться до "data-length".
+// Не понял как напрямую достучаться до "data-length".
