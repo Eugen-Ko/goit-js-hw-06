@@ -1,5 +1,17 @@
 // Инициализация узла
 const fontSizeControl = document.querySelector("#font-size-control");
+const mutableText = document.querySelector("#text");
+
+// Устанавливаем начальное значение в минимальное значение инпута.
+fontSizeControl.value = fontSizeControl.min;
+
+// Синхронизация начального значение инпута и текста
+mutableText.style.fontSize = `${fontSizeControl.value}px`;
+
+// Изменение размера шрифта "онлайн"
+fontSizeControl.addEventListener("input", (event) => {
+  mutableText.style.fontSize = `${event.currentTarget.value}px`;
+});
 
 // Изменение размера шрифта при потере фокуса
 // с прописыванием инлайн стиля физически
@@ -22,9 +34,3 @@ const fontSizeControl = document.querySelector("#font-size-control");
 //   mutableText.style.fontSize = `${fontSizeControl.value}px`;
 // });
 // ---------------------------------------------
-
-// Изменение размера шрифта "онлайн"
-const mutableText = document.querySelector("#text");
-fontSizeControl.addEventListener("input", (event) => {
-  mutableText.style.fontSize = `${event.currentTarget.value}px`;
-});
