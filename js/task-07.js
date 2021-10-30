@@ -2,7 +2,8 @@
 const fontSizeControl = document.querySelector("#font-size-control");
 const mutableText = document.querySelector("#text");
 
-// Устанавливаем начальное значение в минимальное значение инпута.
+// Устанавливаем любое начальное значение
+// Например в минимальное значение инпута.
 fontSizeControl.value = fontSizeControl.min;
 
 // Синхронизация начального значение инпута и текста
