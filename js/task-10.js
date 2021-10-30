@@ -112,6 +112,7 @@ const fieldClear = () => (amountField.value = "");
 const destroyElements = () => {
   boxesPlace.innerHTML = "";
   globalCounter = 0;
+  info.textContent = "";
 };
 
 // слушатель на "Сreate".
