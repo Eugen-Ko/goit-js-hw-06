@@ -16,14 +16,14 @@ function onFormSubmit(event) {
   // Проверка пустых полей
   if (!checkField(refs)) return;
 
-  // Создание объекта
-  const resObject = {
-    email: refs.loginForm.elements[0].value,
-    password: refs.loginForm.elements[1].value,
-  };
-
-  // вывод в консоль
-  console.log(resObject);
+  // !!!!! Создание объекта через FormData
+  // ---------------------------------------------------------
+  const resObject = new FormData(event.currentTarget);
+  // Вывод объекта в консоль
+  resObject.forEach((value, name) => {
+    console.log(`field ${name} = ${value}`);
+  });
+  // ---------------------------------------------------------
 
   // очиста полей формы
   refs.loginForm.reset();
