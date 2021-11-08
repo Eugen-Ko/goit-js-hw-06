@@ -39,21 +39,20 @@ const createElements = (amount) => {
 // Функция проверки и удаления строки ошибочного ввода
 const checkedAlertStr = () => {
   const errorStr = boxesPlace.querySelector(".wrongRange");
-  errorStr ? errorStr.remove() : null;
+  if (errorStr) errorStr.remove();
 };
 
 // Функция проверяет корректность ввода числа
-const checkedNumber = (amount) =>
-  amount > maxSquare || amount < minSquare
-    ? insertError()
-    : checkMaxSquare(amount);
+const checkedNumber = (amount) => {
+  if (amount > maxSquare || amount < minSquare) insertError();
+  else checkMaxSquare(amount);
+};
 
 // Функция проверки того, что общее колличество квадратов
 // не превышает максимальное значение.
 const checkMaxSquare = (amount) => {
-  Number(globalCounter + amount) <= maxSquare
-    ? createBoxes(amount)
-    : errorMaxSquare(amount);
+  if (Number(globalCounter + amount) <= maxSquare) createBoxes(amount);
+  else errorMaxSquare(amount);
 };
 
 // Функция выводит сообщение, что будет выведено
@@ -81,9 +80,8 @@ const createBoxes = (amount) => {
     );
   }
   // Увеличение счетчика квадратов
-  globalCounter + amount <= maxSquare
-    ? (globalCounter += amount)
-    : (globalCounter = maxSquare);
+  if (globalCounter + amount <= maxSquare) globalCounter += amount;
+  else globalCounter = maxSquare;
   // Вывод на экран колличества квадратов
   showNumberOfSquare();
   // Очистка поля ввода

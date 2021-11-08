@@ -1,4 +1,5 @@
 const itemsRef = document.querySelector("#categories").children;
+console.log(document.querySelector("#categorie"));
 
 // Рассыпал itemsRef в массив, поскольку forEach работает с массивом
 [...itemsRef].forEach((element) => {

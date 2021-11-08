@@ -25,6 +25,8 @@ inputField.addEventListener("input", (even) => {
       inputField.className = "invalid";
   }
 });
+
+console.log(inputField.dataset.length);
 // ------------------------------------------
 
 // Не понял как напрямую достучаться до "data-length".
