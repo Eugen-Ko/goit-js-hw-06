@@ -99,9 +99,6 @@ const insertError = () => {
   fieldClear();
 };
 
-// Функция выводит общее колличество квадратов на экране
-const howManySquares = () => {};
-
 // Функция очистки поля ввода
 const fieldClear = () => (amountField.value = "");
 
