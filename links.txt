@@ -1,0 +1,31 @@
+https://github.com/romanchenko2804/markup-mentor
+
+https://www.figma.com/file/MLRPGA7rHJ1w7SwPdCo2jh/%D0%91%D0%B0%D0%B9%D0%BA%D0%B0%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B9-%D0%BE%D1%82%D0%B4%D1%8B%D1%85-(Copy)-(Copy)?node-id=205%3A2
+
+https://www.euismod.dev/#/
+
+https://cssgrid.io/
+
+https://t.me/build_html
+
+Path Intellisense
+XML Format
+
+
+https://tpverstak.ru/flex-cheatsheet/  - инфа по флексам.
+
+@media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(
+      to right, 
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+      ), url("")    
+  }
+
+медиазапрос по 8-й домашке для плотности экрана по хероу.
+
+https://github.com/starallax/Frontend_40 репа просолова дмитрия
+
